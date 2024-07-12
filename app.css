@@ -153,6 +153,12 @@ body, html {
     outline: 1px solid #345ff6;
 }
 
+.metric-input, .imperial-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 .input-results {
     width: 85%;
     margin: 0 auto;
@@ -180,4 +186,26 @@ body, html {
 
 .input-results-description {
     padding: 0 20px 20px;
+}
+
+.imperial-input {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.imperial-height-input input, .imperial-weight-input input {
+    width: 60%;
+}
+
+#feet, #stones {
+    left: 85px;
+    bottom: 20px;
+    width: 20px;
+}
+
+#inches, #pounds {
+    right: 20px;
+    bottom: 20px;
+    width: 20px;
 }

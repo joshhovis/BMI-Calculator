@@ -31,14 +31,70 @@
                 <div class="input-group">
                     <label class="input-group-height">
                         Height
-                        <input class="input-height" type="text" name="height" />
-                        <span class="height-unit">cm</span>
+                        <div class="metric-input">
+                            <input
+                                class="input-height"
+                                type="text"
+                                name="height"
+                            />
+                            <span class="unit height-unit" id="centimeter"
+                                >cm</span
+                            >
+                        </div>
+                        <div class="imperial-input" style="display: none">
+                            <div class="imperial-height-input">
+                                <input
+                                    class="input-feet"
+                                    type="text"
+                                    name="feet"
+                                />
+                                <span class="height-unit" id="feet">ft</span>
+                            </div>
+                            <div class="imperial-height-input">
+                                <input
+                                    class="input-inches"
+                                    type="text"
+                                    name="inches"
+                                />
+                                <span class="height-unit" id="inches">in</span>
+                            </div>
+                        </div>
                     </label>
 
                     <label class="input-group-weight">
                         Weight
-                        <input class="input-weight" type="text" name="weight" />
-                        <span class="weight-unit">kg</span>
+                        <div class="metric-input">
+                            <input
+                                class="input-weight"
+                                type="text"
+                                name="weight"
+                            />
+                            <span class="unit weight-unit" id="kilogram"
+                                >kg</span
+                            >
+                        </div>
+                        <div class="imperial-input" style="display: none">
+                            <div class="imperial-weight-input">
+                                <input
+                                    class="input-stones"
+                                    type="text"
+                                    name="stones"
+                                />
+                                <span class="unit weight-unit" id="stones"
+                                    >st</span
+                                >
+                            </div>
+                            <div class="imperial-weight-input">
+                                <input
+                                    class="input-pounds"
+                                    type="text"
+                                    name="pounds"
+                                />
+                                <span class="unit weight-unit" id="pounds"
+                                    >lbs</span
+                                >
+                            </div>
+                        </div>
                     </label>
                 </div>
 
@@ -56,55 +112,87 @@
             document.addEventListener("DOMContentLoaded", () => {
                 const radioButtons =
                     document.querySelectorAll("input[name=radio]");
-                const heightInput = document.querySelector(".input-height");
-                const weightInput = document.querySelector(".input-weight");
                 const resultsHeader = document.querySelector(
                     ".input-results-header"
                 );
                 const resultsDescription = document.querySelector(
                     ".input-results-description"
                 );
-                const heightUnit = document.querySelector(".height-unit");
-                const weightUnit = document.querySelector(".weight-unit");
+                const heightInput = document.querySelector(".input-height");
+                const weightInput = document.querySelector(".input-weight");
+                const feetInput = document.querySelector(".input-feet");
+                const inchesInput = document.querySelector(".input-inches");
+                const stonesInput = document.querySelector(".input-stones");
+                const poundsInput = document.querySelector(".input-pounds");
+                const metricInputs = document.querySelectorAll(".metric-input");
+                const imperialInputs =
+                    document.querySelectorAll(".imperial-input");
 
                 function calculateBMI() {
-                    const height = parseFloat(heightInput.value);
-                    const weight = parseFloat(weightInput.value);
-                    let bmi;
+                    const selectedUnit = document.querySelector(
+                        'input[name="radio"]:checked'
+                    ).value;
+                    let height, weight, bmi;
 
-                    // Return error message if user does not enter a number
-                    if (isNaN(height) || isNaN(weight)) {
-                        resultsDescription.textContent =
-                            "Please enter a valid height and weight";
-                        return;
-                    }
-
-                    if (
-                        document.querySelector('input[name="radio"]:checked')
-                            .value === "1"
-                    ) {
+                    if (selectedUnit === "1") {
                         // Metric
+                        height = parseFloat(heightInput.value);
+                        weight = parseFloat(weightInput.value);
+
+                        // Return error message if user does not enter a number
+                        if (isNaN(height) || isNaN(weight)) {
+                            resultsDescription.textContent =
+                                "Please enter a valid height and weight";
+                            return;
+                        }
+
                         bmi = (weight / height ** 2) * 10000;
                     } else {
-                        // Imperial
+                        // imperial
+                        const feet = parseFloat(feetInput.value);
+                        const inches = parseFloat(inchesInput.value);
+                        const stones = parseFloat(stonesInput.value);
+                        const pounds = parseFloat(poundsInput.value);
+
+                        if (
+                            isNaN(feet) ||
+                            isNaN(inches) ||
+                            isNaN(stones) ||
+                            isNaN(pounds)
+                        ) {
+                            resultsDescription.textContent =
+                                "Please enter a valid height and weight";
+                            return;
+                        }
+
+                        height = feet * 12 + inches;
+                        weight = stones * 14 + pounds;
                         bmi = (weight / height ** 2) * 703;
                     }
 
                     resultsHeader.innerHTML = `
                     Your BMI is... <span class="bmi">${bmi.toFixed(1)}</span>`;
                     resultsDescription.innerHTML = `
-                    Your BMI suggests you're a healthy weight. Your ideal weight is between <span class="weight-range">63.3kgs - 85.2kgs</span>.
+                        Your BMI suggests you're a healthy weight. Your ideal weight is between <span class="weight-range">63.3kgs - 85.2kgs</span>.
                     `;
                 }
 
                 radioButtons.forEach((radio) => {
                     radio.addEventListener("change", () => {
                         if (radio.value === "1") {
-                            heightUnit.textContent = "cm";
-                            weightUnit.textContent = "kg";
+                            metricInputs.forEach(
+                                (input) => (input.style.display = "flex")
+                            );
+                            imperialInputs.forEach(
+                                (input) => (input.style.display = "none")
+                            );
                         } else {
-                            heightUnit.textContent = "inches";
-                            weightUnit.textContent = "lbs";
+                            metricInputs.forEach(
+                                (input) => (input.style.display = "none")
+                            );
+                            imperialInputs.forEach(
+                                (input) => (input.style.display = "flex")
+                            );
                         }
                         calculateBMI();
                     });
@@ -112,6 +200,10 @@
 
                 heightInput.addEventListener("input", calculateBMI);
                 weightInput.addEventListener("input", calculateBMI);
+                feetInput.addEventListener("input", calculateBMI);
+                inchesInput.addEventListener("input", calculateBMI);
+                stonesInput.addEventListener("input", calculateBMI);
+                poundsInput.addEventListener("input", calculateBMI);
             });
         </script>
     </body>
