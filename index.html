@@ -32,16 +32,87 @@
                     <label class="input-group-height">
                         Height
                         <input class="input-height" type="text" name="height" />
-                        <span>cm</span>
+                        <span class="height-unit">cm</span>
                     </label>
 
                     <label class="input-group-weight">
                         Weight
                         <input class="input-weight" type="text" name="weight" />
-                        <span>kg</span>
+                        <span class="weight-unit">kg</span>
                     </label>
+                </div>
+
+                <div class="input-results">
+                    <h2 class="input-results-header">Welcome!</h2>
+                    <p class="input-results-description">
+                        Enter your height and weight and you'll see your BMI
+                        result here
+                    </p>
                 </div>
             </div>
         </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const radioButtons =
+                    document.querySelectorAll("input[name=radio]");
+                const heightInput = document.querySelector(".input-height");
+                const weightInput = document.querySelector(".input-weight");
+                const resultsHeader = document.querySelector(
+                    ".input-results-header"
+                );
+                const resultsDescription = document.querySelector(
+                    ".input-results-description"
+                );
+                const heightUnit = document.querySelector(".height-unit");
+                const weightUnit = document.querySelector(".weight-unit");
+
+                function calculateBMI() {
+                    const height = parseFloat(heightInput.value);
+                    const weight = parseFloat(weightInput.value);
+                    let bmi;
+
+                    // Return error message if user does not enter a number
+                    if (isNaN(height) || isNaN(weight)) {
+                        resultsDescription.textContent =
+                            "Please enter a valid height and weight";
+                        return;
+                    }
+
+                    if (
+                        document.querySelector('input[name="radio"]:checked')
+                            .value === "1"
+                    ) {
+                        // Metric
+                        bmi = (weight / height ** 2) * 10000;
+                    } else {
+                        // Imperial
+                        bmi = (weight / height ** 2) * 703;
+                    }
+
+                    resultsHeader.innerHTML = `
+                    Your BMI is... <span class="bmi">${bmi.toFixed(1)}</span>`;
+                    resultsDescription.innerHTML = `
+                    Your BMI suggests you're a healthy weight. Your ideal weight is between <span class="weight-range">63.3kgs - 85.2kgs</span>.
+                    `;
+                }
+
+                radioButtons.forEach((radio) => {
+                    radio.addEventListener("change", () => {
+                        if (radio.value === "1") {
+                            heightUnit.textContent = "cm";
+                            weightUnit.textContent = "kg";
+                        } else {
+                            heightUnit.textContent = "inches";
+                            weightUnit.textContent = "lbs";
+                        }
+                        calculateBMI();
+                    });
+                });
+
+                heightInput.addEventListener("input", calculateBMI);
+                weightInput.addEventListener("input", calculateBMI);
+            });
+        </script>
     </body>
 </html>

@@ -152,3 +152,32 @@ body, html {
     border: 1px solid #345ff6;
     outline: 1px solid #345ff6;
 }
+
+.input-results {
+    width: 85%;
+    margin: 0 auto;
+    background-color: #345ff6;
+    color: white;
+    border-radius: 16px;
+    margin-top: 30px;
+}
+
+.input-results-header {
+    padding: 20px 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.bmi {
+    display: block;
+    margin-top: 5px;
+    font-size: 48px;
+}
+
+.weight-range {
+    font-weight: 600;
+}
+
+.input-results-description {
+    padding: 0 20px 20px;
+}
