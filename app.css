@@ -25,6 +25,14 @@ body, html {
 
 .hero {
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-logo {
+    width: 48px;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .hero-input {
@@ -52,6 +60,7 @@ body, html {
     font-size: 48px;
     padding: 0 20px;
     margin-bottom: 0;
+    margin-top: 30px;
 }
 
 .hero-description {
@@ -284,13 +293,13 @@ body, html {
 }
 
 .limitations-description {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .limitations-categories {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
 .limitations-category {
