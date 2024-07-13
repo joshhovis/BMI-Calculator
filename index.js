@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".imperial-input");
 
     // Weight range calulator based on height in cm
-    function calculateIdealWeightRange(heightInCm) {
+    function calculateIdealWeightRangeMetric(heightInCm) {
         let heightInMeters = heightInCm / 100;
         let minWeight = 18.5 * (heightInMeters ** 2);
         let maxWeight = 24.9 * (heightInMeters ** 2);
@@ -26,6 +26,25 @@ document.addEventListener("DOMContentLoaded", () => {
         return {
             minWeight: minWeight.toFixed(1),
             maxWeight: maxWeight.toFixed(1)
+        };
+    }
+
+    function calculateIdealWeightRangeImperial(heightInInches) {
+        let minWeight = 18.5 * (heightInInches ** 2) / 703;
+        let maxWeight = 24.9 * (heightInInches ** 2) / 703;
+
+        function convertToStonesAndPounds(weight) {
+            const stones = Math.floor(weight / 14);
+            const pounds = (weight % 14).toFixed(1);
+            return { stones, pounds };
+        }
+
+        const minWeightInStonesAndPounds = convertToStonesAndPounds(minWeight);
+        const maxWeightInStonesAndPounds = convertToStonesAndPounds(maxWeight);
+
+        return {
+            minWeight: `${minWeightInStonesAndPounds.stones}st ${minWeightInStonesAndPounds.pounds}`,
+            maxWeight: `${maxWeightInStonesAndPounds.stones}st ${maxWeightInStonesAndPounds.pounds}`
         };
     }
 
@@ -50,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             bmi = (weight / height ** 2) * 10000;
 
             // Calculate ideal weight range
-            const idealWeightRange = calculateIdealWeightRange(height);
+            const idealWeightRange = calculateIdealWeightRangeMetric(height);
 
             if (bmi < 18.5) {
                 resultsDescription.innerHTML = `
@@ -92,9 +111,21 @@ document.addEventListener("DOMContentLoaded", () => {
             weight = stones * 14 + pounds;
             bmi = (weight / height ** 2) * 703;
 
-            resultsDescription.innerHTML = `
-            Your BMI suggests you're a healthy weight.
-        `;
+            const idealWeightRange = calculateIdealWeightRangeImperial(height);
+
+            if (bmi < 18.5) {
+                resultsDescription.innerHTML = `
+                    Your BMI suggests you're underweight. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}lbs - ${idealWeightRange.maxWeight}lbs</span>.
+                `;
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                resultsDescription.innerHTML = `
+                    Your BMI suggests you're a healthy weight. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}lbs - ${idealWeightRange.maxWeight}lbs</span>.
+                `;
+            } else {
+                resultsDescription.innerHTML = `
+                    Your BMI suggests you're overweight. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}lbs - ${idealWeightRange.maxWeight}lbs</span>.
+                `;
+            }
         }
 
         resultsHeader.innerHTML = `
