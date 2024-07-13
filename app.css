@@ -325,3 +325,97 @@ body, html {
 .limitations-category-description {
     color: #5e6e85;
 }
+
+@media only screen and (min-width: 768px) {
+    .hero-logo {
+        width: 60px;
+    }
+
+    .hero-title {
+        width: 60%;
+        margin: 30px auto 0;
+    }
+
+    .hero-title span {
+        display: block;
+    }
+
+    .hero-description {
+        font-size: 20px;
+        padding: 0 38px;
+    }
+
+    .hero-input-header {
+        font-size: 28px;
+        text-align: left;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+
+    .radio-group {
+        padding: 0 8px;
+        justify-content: left;
+        gap: 30%;
+        margin-bottom: 30px;
+    }
+
+    .input-group {
+        flex-direction: row;
+    }
+
+    .input-group-height {
+        width: 40%;
+        font-size: 18px;
+    }
+
+    .input-group-weight {
+        width: 40%;
+        font-size: 18px;
+    }
+
+    .input-results {
+        margin: 50px 0 0 20px;
+        width: 90%;
+        border-radius: 20px 99px 99px 20px;
+        font-size: 18px;
+    }
+
+    .input-results-header {
+        font-size: 20px;
+    }
+
+    .imperial-input {
+        flex-direction: column;
+    }
+
+    #feet, #stones {
+        top: 30px;
+        left: 175px;
+    }
+
+    #inches, #pounds {
+        right: 80px;
+    }
+
+    .result {
+        display: flex;
+        position: relative;
+    }
+
+    .result-image {
+        width: 380px;
+        height: auto;
+        position: absolute;
+        left: -80px;
+        bottom: 20px;
+    }
+
+    .result-text {
+        width: 58%;
+        margin-left: 40%;
+    }
+
+    .result-text-description {
+        font-size: 20px;
+    }
+}
