@@ -277,3 +277,42 @@ body, html {
 .tips p {
     color: #5e6e85;
 }
+
+.limitations {
+    padding: 0 20px;
+    margin-bottom: 80px;
+}
+
+.limitations-description {
+    margin-bottom: 40px;
+}
+
+.limitations-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.limitations-category {
+    border-radius: 16px;
+    padding: 24px;
+    -webkit-box-shadow: 16px 20px 56px 0px rgba(143,174,207,0.25);
+    -moz-box-shadow: 16px 20px 56px 0px rgba(143,174,207,0.25);
+    box-shadow: 16px 20px 56px 0px rgba(143,174,207,0.25);
+    background: white;
+}
+
+.limitations-category-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.limitations-category-header-text {
+    font-size: 20px;
+    color: #253347;
+}
+
+.limitations-category-description {
+    color: #5e6e85;
+}
