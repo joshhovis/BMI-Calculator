@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const metricInputs = document.querySelectorAll(".metric-input");
     const imperialInputs =
         document.querySelectorAll(".imperial-input");
+    const resultMeaningDescription = document.querySelector(".result-text-description");
 
     // Weight range calulator based on height in cm
     function calculateIdealWeightRangeMetric(heightInCm) {
@@ -75,18 +76,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 resultsDescription.innerHTML = `
                     Your BMI suggests that you're underweight. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}kgs - ${idealWeightRange.maxWeight}kgs</span>.
             `;
+                resultMeaningDescription.innerHTML = "A BMI less than 18.5 is considered underweight. Being underweight can lead to health issues such as weakened immune system, fragile bones, and fatigue. Aim to include more nutrient-rich foods in your diet, such as lean proteins, whole grains, and healthy fats. It's also important to engage in regular strength training exercises to build muscle mass and improve overall health."
             } else if (bmi >= 18.5 && bmi < 24.9) {
                 resultsDescription.innerHTML = `
                     Your BMI suggests that you're a healthy weight. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}kgs - ${idealWeightRange.maxWeight}kgs</span>.
                 `;
+                resultMeaningDescription.innerHTML = "A BMI range of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining a healthy weight may lower your chances of experiencing health issues later on, such as obesity and type 2 diabetes. Aim for a nutritious diet with reduced fat and sugar content, incorporating ample fruits and vegetables. Additionally, strive for regular physical activity, ideally about 30 minutes daily for five days a week."
             } else if (bmi >= 25 && bmi <= 29.9) {
                 resultsDescription.innerHTML = `
                     Your BMI suggests that you're overweight. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}kgs - ${idealWeightRange.maxWeight}kgs</span>.
                 `;
+                    resultMeaningDescription.innerHTML = "A BMI between 25 and 29.9 is considered overweight. Carrying excess weight can increase your risk of health problems like heart disease, hypertension, and type 2 diabetes. Focus on a balanced diet that limits processed foods and sugars, and includes plenty of vegetables, fruits, lean proteins, and whole grains. Regular physical activity, such as 30 minutes of moderate exercise most days of the week, is crucial for managing weight and improving health."
             } else {
                 resultsDescription.innerHTML = `
                     Your BMI suggests that you're obese. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}kgs - ${idealWeightRange.maxWeight}kgs</span>.
                 `;
+                resultMeaningDescription.innerHTML = "A BMI of 30 or higher is considered obese. Obesity is associated with a higher risk of serious health conditions, including heart disease, diabetes, and certain cancers. To manage your weight, aim for a balanced diet that emphasizes nutrient-dense foods, reduces caloric intake, and limits unhealthy fats and sugars. Regular exercise, such as brisk walking, swimming, or cycling, is essential to support weight loss and enhance well-being. Consulting with a healthcare provider for personalized guidance can also be beneficial."
             }
 
         } else {
@@ -117,16 +122,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 resultsDescription.innerHTML = `
                     Your BMI suggests you're underweight. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}lbs - ${idealWeightRange.maxWeight}lbs</span>.
                 `;
+                resultMeaningDescription.innerHTML = "A BMI less than 18.5 is considered underweight. Being underweight can lead to health issues such as weakened immune system, fragile bones, and fatigue. Aim to include more nutrient-rich foods in your diet, such as lean proteins, whole grains, and healthy fats. It's also important to engage in regular strength training exercises to build muscle mass and improve overall health."
             } else if (bmi >= 18.5 && bmi < 24.9) {
                 resultsDescription.innerHTML = `
                     Your BMI suggests you're a healthy weight. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}lbs - ${idealWeightRange.maxWeight}lbs</span>.
                 `;
-            } else {
+                resultMeaningDescription.innerHTML = "A BMI range of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining a healthy weight may lower your chances of experiencing health issues later on, such as obesity and type 2 diabetes. Aim for a nutritious diet with reduced fat and sugar content, incorporating ample fruits and vegetables. Additionally, strive for regular physical activity, ideally about 30 minutes daily for five days a week."
+            } else if (bmi >= 25 && bmi <= 29.9) {
                 resultsDescription.innerHTML = `
                     Your BMI suggests you're overweight. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}lbs - ${idealWeightRange.maxWeight}lbs</span>.
                 `;
-            }
+                    resultMeaningDescription.innerHTML = "A BMI between 25 and 29.9 is considered overweight. Carrying excess weight can increase your risk of health problems like heart disease, hypertension, and type 2 diabetes. Focus on a balanced diet that limits processed foods and sugars, and includes plenty of vegetables, fruits, lean proteins, and whole grains. Regular physical activity, such as 30 minutes of moderate exercise most days of the week, is crucial for managing weight and improving health."
+            } else {
+                resultsDescription.innerHTML = `
+                    Your BMI suggests that you're obese. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}lbs - ${idealWeightRange.maxWeight}lbs</span>.
+                `;
+                resultMeaningDescription.innerHTML = "A BMI of 30 or higher is considered obese. Obesity is associated with a higher risk of serious health conditions, including heart disease, diabetes, and certain cancers. To manage your weight, aim for a balanced diet that emphasizes nutrient-dense foods, reduces caloric intake, and limits unhealthy fats and sugars. Regular exercise, such as brisk walking, swimming, or cycling, is essential to support weight loss and enhance well-being. Consulting with a healthcare provider for personalized guidance can also be beneficial."
         }
+    }
 
         resultsHeader.innerHTML = `
         Your BMI is... <span class="bmi">${bmi.toFixed(1)}</span>`;

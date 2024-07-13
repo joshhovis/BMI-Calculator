@@ -5,15 +5,34 @@
 
 body, html {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
+    margin: auto 0;
+}
+
+.background-pattern-top {
+    height: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: rgb(214,230,254);
+    background: linear-gradient(266deg, rgba(214,230,254,1) 0%, rgba(214,252,254,0) 100%);
+    z-index: -1;
+    border-radius: 0 0 35px 35px;
+}
+
+.hero {
+    margin-bottom: 50px;
 }
 
 .hero-input {
-    background-color: #ffffff57;
+    background-color: #ffffff;
     width: 90%;
     margin: 0 auto;
-    border: 1px solid black;
     border-radius: 16px;
     padding: 20px 0 25px;
+    -webkit-box-shadow: 16px 32px 56px 0px rgba(143,174,207,0.15);
+    -moz-box-shadow: 16px 32px 56px 0px rgba(143,174,207,0.15);
+    box-shadow: 16px 32px 56px 0px rgba(143,174,207,0.15);
 }
 
 .hero-input-header {
@@ -208,4 +227,13 @@ body, html {
     right: 20px;
     bottom: 20px;
     width: 20px;
+}
+
+/* RESULT SECTION */
+.result {
+    margin-bottom: 30px;
+}
+
+.result-image {
+    width: 100%;
 }

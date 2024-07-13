@@ -7,106 +7,142 @@
         <link rel="stylesheet" href="app.css" />
     </head>
     <body>
-        <div class="hero">
-            <h1 class="hero-title">Body Mass Index Calculator</h1>
-            <p class="hero-description">
-                Better understand your weight in relation to your height using
-                our body mass index (BM) calculator. While BMI is not the sole
-                determinant of a healthy weight, it offers a valuable starting
-                point to evaluate your overall health and well-being.
-            </p>
-            <div class="hero-input">
-                <h2 class="hero-input-header">Enter your details below</h2>
-                <div class="radio-group">
-                    <label class="radio-button"
-                        ><input type="radio" name="radio" value="1" checked />
-                        Metric <span></span
-                    ></label>
-                    <label class="radio-button"
-                        ><input type="radio" name="radio" value="2" /> Imperial
-                        <span></span
-                    ></label>
-                </div>
+        <main>
+            <div class="hero">
+                <div class="background-pattern-top"></div>
+                <h1 class="hero-title">Body Mass Index Calculator</h1>
+                <p class="hero-description">
+                    Better understand your weight in relation to your height
+                    using our body mass index (BM) calculator. While BMI is not
+                    the sole determinant of a healthy weight, it offers a
+                    valuable starting point to evaluate your overall health and
+                    well-being.
+                </p>
+                <div class="hero-input">
+                    <h2 class="hero-input-header">Enter your details below</h2>
+                    <div class="radio-group">
+                        <label class="radio-button"
+                            ><input
+                                type="radio"
+                                name="radio"
+                                value="1"
+                                checked />
+                            Metric <span></span
+                        ></label>
+                        <label class="radio-button"
+                            ><input type="radio" name="radio" value="2" />
+                            Imperial <span></span
+                        ></label>
+                    </div>
 
-                <div class="input-group">
-                    <label class="input-group-height">
-                        Height
-                        <div class="metric-input">
-                            <input
-                                class="input-height"
-                                type="text"
-                                name="height"
-                            />
-                            <span class="unit height-unit" id="centimeter"
-                                >cm</span
-                            >
-                        </div>
-                        <div class="imperial-input" style="display: none">
-                            <div class="imperial-height-input">
+                    <div class="input-group">
+                        <label class="input-group-height">
+                            Height
+                            <div class="metric-input">
                                 <input
-                                    class="input-feet"
+                                    class="input-height"
                                     type="text"
-                                    name="feet"
+                                    name="height"
                                 />
-                                <span class="height-unit" id="feet">ft</span>
-                            </div>
-                            <div class="imperial-height-input">
-                                <input
-                                    class="input-inches"
-                                    type="text"
-                                    name="inches"
-                                />
-                                <span class="height-unit" id="inches">in</span>
-                            </div>
-                        </div>
-                    </label>
-
-                    <label class="input-group-weight">
-                        Weight
-                        <div class="metric-input">
-                            <input
-                                class="input-weight"
-                                type="text"
-                                name="weight"
-                            />
-                            <span class="unit weight-unit" id="kilogram"
-                                >kg</span
-                            >
-                        </div>
-                        <div class="imperial-input" style="display: none">
-                            <div class="imperial-weight-input">
-                                <input
-                                    class="input-stones"
-                                    type="text"
-                                    name="stones"
-                                />
-                                <span class="unit weight-unit" id="stones"
-                                    >st</span
+                                <span class="unit height-unit" id="centimeter"
+                                    >cm</span
                                 >
                             </div>
-                            <div class="imperial-weight-input">
+                            <div class="imperial-input" style="display: none">
+                                <div class="imperial-height-input">
+                                    <input
+                                        class="input-feet"
+                                        type="text"
+                                        name="feet"
+                                    />
+                                    <span class="height-unit" id="feet"
+                                        >ft</span
+                                    >
+                                </div>
+                                <div class="imperial-height-input">
+                                    <input
+                                        class="input-inches"
+                                        type="text"
+                                        name="inches"
+                                    />
+                                    <span class="height-unit" id="inches"
+                                        >in</span
+                                    >
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="input-group-weight">
+                            Weight
+                            <div class="metric-input">
                                 <input
-                                    class="input-pounds"
+                                    class="input-weight"
                                     type="text"
-                                    name="pounds"
+                                    name="weight"
                                 />
-                                <span class="unit weight-unit" id="pounds"
-                                    >lbs</span
+                                <span class="unit weight-unit" id="kilogram"
+                                    >kg</span
                                 >
                             </div>
-                        </div>
-                    </label>
-                </div>
+                            <div class="imperial-input" style="display: none">
+                                <div class="imperial-weight-input">
+                                    <input
+                                        class="input-stones"
+                                        type="text"
+                                        name="stones"
+                                    />
+                                    <span class="unit weight-unit" id="stones"
+                                        >st</span
+                                    >
+                                </div>
+                                <div class="imperial-weight-input">
+                                    <input
+                                        class="input-pounds"
+                                        type="text"
+                                        name="pounds"
+                                    />
+                                    <span class="unit weight-unit" id="pounds"
+                                        >lbs</span
+                                    >
+                                </div>
+                            </div>
+                        </label>
+                    </div>
 
-                <div class="input-results">
-                    <h2 class="input-results-header">Welcome!</h2>
-                    <p class="input-results-description">
-                        Enter your height and weight and you'll see your BMI
-                        result here
+                    <div class="input-results">
+                        <h2 class="input-results-header">Welcome!</h2>
+                        <p class="input-results-description">
+                            Enter your height and weight and you'll see your BMI
+                            result here
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result">
+                <img
+                    src="./assets/images/image-man-eating.webp"
+                    alt="man eating sushi"
+                    class="result-image"
+                />
+
+                <div class="result-text">
+                    <h2 class="result-text-header">
+                        What your BMI result means
+                    </h2>
+                    <p class="result-text-description">
+                        A BMI range of 18.5 to 24.9 is considered a 'healthy
+                        weight.' Maintaining a healthy weight may lower your
+                        chances of experiencing health issues later on, such as
+                        obesity and type 2 diabetes. Aim for a nutritious diet
+                        with reduced fat and sugar content, incorporating ample
+                        fruits and vegetables. Additionally, strive for regular
+                        physical activity, ideally about 30 minutes daily for
+                        five days a week.
                     </p>
                 </div>
             </div>
-        </div>
+        </main>
 
         <script src="./index.js"></script>
     </body>
