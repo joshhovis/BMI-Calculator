@@ -3,19 +3,22 @@
     src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
+/* gunmetal - #253347*/
+/* dark electric blue - #5e6e85 */
+
 body, html {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     margin: auto 0;
 }
 
 .background-pattern-top {
-    height: 400px;
+    height: 540px;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     background: rgb(214,230,254);
-    background: linear-gradient(266deg, rgba(214,230,254,1) 0%, rgba(214,252,254,0) 100%);
+    background: linear-gradient(300deg, rgba(214,230,254,1) 0%, rgba(214,252,254,0) 100%);
     z-index: -1;
     border-radius: 0 0 35px 35px;
 }
@@ -45,10 +48,17 @@ body, html {
 
 .hero-title {
     text-align: center;
+    color: #253347;
+    font-size: 48px;
+    padding: 0 20px;
+    margin-bottom: 0;
 }
 
 .hero-description {
     text-align: center;
+    color: #5e6e85;
+    padding: 0 20px;
+    margin-bottom: 40px;
 }
 
 .radio-group {
@@ -236,4 +246,15 @@ body, html {
 
 .result-image {
     width: 100%;
+}
+
+.result-text-header {
+    font-size: 30px;
+    padding: 0 20px;
+    color: #253347;
+}
+
+.result-text-description {
+    padding: 0 20px;
+    color: #5e6e85;
 }
