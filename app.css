@@ -241,7 +241,7 @@ body, html {
 
 /* RESULT SECTION */
 .result {
-    margin-bottom: 30px;
+    margin-bottom: 80px;
 }
 
 .result-image {
@@ -256,5 +256,24 @@ body, html {
 
 .result-text-description {
     padding: 0 20px;
+    color: #5e6e85;
+}
+
+.tips {
+    padding: 20px 20px;
+    margin-bottom: 50px;
+    background: rgb(214,230,254);
+    background: linear-gradient(300deg, rgba(214,230,254,1) 0%, rgba(214,252,254,0) 80%);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 16px;
+}
+
+.tips h2 {
+    color: #253347;
+}
+
+.tips p {
     color: #5e6e85;
 }
