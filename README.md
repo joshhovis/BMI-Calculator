@@ -10,7 +10,7 @@ This is a solution to the [Body Mass Index Calculator challenge on Frontend Ment
 
 ### Links
 
--   Solution URL: [Frontend Mentor Challenge](https://www.frontendmentor.io/challenges/body-mass-index-calculator-brrBkfSz1T)
+-   Solution URL: [Frontend Mentor Challenge](https://www.frontendmentor.io/solutions/bmi-index-calculator-AbTmDM9OY3)
 -   Live Site URL: [Live Site URL](https://joshhovis.github.io/BMI-Calculator/)
 
 ### Built with
