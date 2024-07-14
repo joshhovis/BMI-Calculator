@@ -513,9 +513,14 @@ body, html {
         bottom: -250px;
     }
 
+    .input-height:hover, .input-weight:hover, .input-feet:hover, .input-inches:hover, .input-stones:hover, .input-pounds:hover {
+        cursor: pointer;
+        border: 1px solid #345ff6;
+        outline: 1px solid #345ff6;
+    }
+
     .input-results {
         align-content: center;
-
         flex-direction: column;
         gap: 20px;
     }
@@ -650,5 +655,15 @@ body, html {
         display: block!important;
         position: absolute;
         left: 18%;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #feet {
+        left: 200px;
+    }
+
+    #stones, #pounds {
+        left: 190px;
     }
 }
