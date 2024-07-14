@@ -15,6 +15,7 @@ This is a solution to the [Body Mass Index Calculator challenge on Frontend Ment
 
 ### Built with
 
+-   Figma design files
 -   Semantic HTML5 markup
 -   CSS custom properties
 -   Flexbox
