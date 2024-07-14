@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultsDescription = document.querySelector(
         ".input-results-description"
     );
+    const inputResults = document.querySelector(".input-results");
     const heightInput = document.querySelector(".input-height");
     const weightInput = document.querySelector(".input-weight");
     const feetInput = document.querySelector(".input-feet");
@@ -72,6 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
             // Calculate ideal weight range
             const idealWeightRange = calculateIdealWeightRangeMetric(height);
 
+            // Give the description text a unique class name when a bmi is rendered so that we can reposition the results description according to design
+            if (bmi) {
+                inputResults.classList.add('_active');
+            }
+
             if (bmi < 18.5) {
                 resultsDescription.innerHTML = `
                     Your BMI suggests that you're underweight. Your ideal weight is between <span class="weight-range">${idealWeightRange.minWeight}kgs - ${idealWeightRange.maxWeight}kgs</span>.
@@ -115,6 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
             height = feet * 12 + inches;
             weight = stones * 14 + pounds;
             bmi = (weight / height ** 2) * 703;
+
+            if (bmi) {
+                inputResults.classList.add('_active');
+            }
 
             const idealWeightRange = calculateIdealWeightRangeImperial(height);
 
