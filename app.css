@@ -662,6 +662,10 @@ body, html {
     #feet {
         left: 200px;
     }
+    
+    #inches {
+        left: 200px;
+    }
 
     #stones, #pounds {
         left: 190px;
