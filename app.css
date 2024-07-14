@@ -574,12 +574,12 @@ body, html {
         margin: 0 auto;
         border-radius: 20px;
         margin-bottom: 100px;
-        padding: 15px 0;
+        padding: 80px 0;
     }
 
     .tips-eating, .tips-exercise, .tips-sleep {
         flex-direction: column;
-        gap: unset;
+        gap: 20px;
     }
 
     .tips-eating-icon, .tips-exercise-icon, .tips-sleep-icon {
