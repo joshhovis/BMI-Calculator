@@ -237,13 +237,13 @@ body, html {
 }
 
 #feet, #stones {
-    left: 85px;
+    left: 110px;
     bottom: 20px;
     width: 20px;
 }
 
 #inches, #pounds {
-    right: 20px;
+    right: 40px;
     bottom: 20px;
     width: 20px;
 }
@@ -327,6 +327,9 @@ body, html {
 }
 
 @media only screen and (min-width: 768px) {
+    .hero {
+        margin-bottom: 150px;
+    }
     .hero-logo {
         width: 60px;
     }
@@ -341,12 +344,10 @@ body, html {
     }
 
     .hero-description {
-        font-size: 20px;
         padding: 0 38px;
     }
 
     .hero-input-header {
-        font-size: 28px;
         text-align: left;
         padding: 0 20px;
         margin-bottom: 20px;
@@ -365,23 +366,30 @@ body, html {
 
     .input-group-height {
         width: 40%;
-        font-size: 18px;
     }
 
     .input-group-weight {
         width: 40%;
-        font-size: 18px;
     }
 
     .input-results {
         margin: 50px 0 0 20px;
         width: 90%;
         border-radius: 20px 99px 99px 20px;
-        font-size: 18px;
+        display: flex;
     }
 
     .input-results-header {
-        font-size: 20px;
+        width: 20%;
+        margin: 0;
+        padding: 40px 40px;
+    }
+
+    .input-results-description {
+        width: 45%;
+        align-items: center;
+        align-content: center;
+        margin-left: 60px;
     }
 
     .imperial-input {
@@ -415,10 +423,6 @@ body, html {
         margin-left: 40%;
     }
 
-    .result-text-description {
-        font-size: 20px;
-    }
-
     .tips {
         display: flex;
         flex-direction: column;
@@ -434,23 +438,17 @@ body, html {
         width: 80%;
     }
 
-    .tips > div > div > p {
-        font-size: 18px;
-    }
-
     .limitations {
         padding: 0 38px;
         margin-top: 40px;
     }
 
     .limitations-header {
-        font-size: 28px;
         text-align: center;
     }
 
     .limitations-description {
         text-align: center;
-        font-size: 18px;
         width: 90%;
         margin: 0 auto;
         margin-bottom: 40px;
@@ -465,12 +463,168 @@ body, html {
     .limitations-category {
         width: 40%;
     }
+}
 
-    .limitations-category-header-text {
-        font-size: 22px;
+@media only screen and (min-width: 1400px) {
+    .hero {
+        margin-bottom: 200px;
+        position: relative;
     }
 
-    .limitations-category-description {
-        font-size: 18px;
+    .background-pattern-top {
+        width: 60%;
+        height: 650px;
+    }
+
+    .hero-logo {
+        margin: 30px 0 0 100px;
+    }
+
+    .hero-title {
+        text-align: left;
+        margin: 0;
+        padding-left: 100px;
+        width: 30%;
+        margin-top: 100px;
+    }
+
+    .hero-description {
+        text-align: left;
+        padding-left: 100px;
+        width: 28%;
+    }
+
+    .hero-input {
+        width: 40%;
+        position: absolute;
+        right: 280px;
+        top: 80px;
+    }
+
+    .radio-button {
+        font-size: 16px;
+    }
+
+    .curved-line-left {
+        display: block!important;
+        position: absolute;
+        width: 65px;
+        right: 30px;
+        bottom: -250px;
+    }
+
+    .input-results {
+        align-content: center;
+    }
+
+    .input-results-description {
+        font-size: 14px;
+    }
+
+    #feet, #stones {
+        left: 140px;
+    }
+
+    .result {
+        padding: 0 0 0 100px;
+        gap: 80px;
+    }
+
+    .result-image {
+        position: unset;
+        width: 500px;
+    }
+
+    .result-text {
+        margin: 0;
+        align-content: center;
+        width: 30%;
+    }
+
+    .result-text-header {
+        width: 80%;
+    }
+
+    .tips {
+        flex-direction: row;
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 20px;
+        margin-bottom: 100px;
+    }
+
+    .tips-eating, .tips-exercise, .tips-sleep {
+        flex-direction: column;
+        gap: unset;
+    }
+
+    .tips-eating-icon, .tips-exercise-icon, .tips-sleep-icon {
+        width: 64px;
+    }
+
+    .limitations {
+        position: relative;
+    }
+
+    .limitations-text {
+        width: 40%;
+        padding: 0 0 0 40px;
+    }
+
+    .limitations-header {
+        text-align: left;
+        font-size: 40px;
+    }
+
+    .limitations-description {
+        text-align: left;
+        margin: 0 0 40px;
+    }
+
+    .limitations-categories {
+        justify-content: start;
+        position: relative;
+        height: 500px;
+    }
+
+    .limitations-category {
+        width: 22%;
+    }
+
+    #gender {
+        margin-left: 20%;
+        position: absolute;
+        right: 250px;
+        top: -200px;
+    }
+
+    #age {
+        position: absolute;
+        right: 36%;
+        top: 14%;
+    }
+
+    #muscle {
+        position: absolute;
+        top: 14%;
+        right: 9%;
+    }
+
+    #pregnancy {
+        position: absolute;
+        bottom: -8%;
+        right: 50%;
+    }
+
+    #race {
+        position: absolute;
+        bottom: -8%;
+        right: 23%;
+    }
+
+    .curved-line-right {
+        display: block!important;
+        position: absolute;
+        left: 18%;
     }
 }
