@@ -272,11 +272,10 @@ body, html {
     padding: 20px 20px;
     margin-bottom: 50px;
     background: rgb(214,230,254);
-    background: linear-gradient(300deg, rgba(214,230,254,1) 0%, rgba(214,252,254,0) 80%);
+    background: linear-gradient(320deg, rgba(214,230,254,1) 0%, rgba(214,252,254,0) 60%);
     display: flex;
     flex-direction: column;
     gap: 30px;
-    border-radius: 16px;
 }
 
 .tips h2 {
@@ -294,6 +293,7 @@ body, html {
 
 .limitations-description {
     margin-bottom: 20px;
+    color: #5e6e85;
 }
 
 .limitations-categories {
@@ -417,5 +417,60 @@ body, html {
 
     .result-text-description {
         font-size: 20px;
+    }
+
+    .tips {
+        display: flex;
+        flex-direction: column;
+        padding: 0 38px;
+    }
+
+    .tips-eating, .tips-exercise, .tips-sleep {
+        display: flex;
+        gap: 40px;
+    }
+
+    .tips-eating-text {
+        width: 80%;
+    }
+
+    .tips > div > div > p {
+        font-size: 18px;
+    }
+
+    .limitations {
+        padding: 0 38px;
+        margin-top: 40px;
+    }
+
+    .limitations-header {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .limitations-description {
+        text-align: center;
+        font-size: 18px;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+
+    .limitations-categories {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .limitations-category {
+        width: 40%;
+    }
+
+    .limitations-category-header-text {
+        font-size: 22px;
+    }
+
+    .limitations-category-description {
+        font-size: 18px;
     }
 }
